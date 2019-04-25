@@ -1,0 +1,32 @@
+<view class='property'>
+  <view class='pro-btn'>
+    <view class='probtn-con' bindtap='toapply'>
+      报修申请
+    </view>
+  </view>
+  <view class='pro-tab'>
+    <view class='protab-title'>
+      <view class='protle-instructions'>
+        情况描述
+      </view>
+      <view class='protle-state'>
+        状态
+      </view>
+      <view class='protle-operation'>
+        操作
+      </view>
+    </view>
+    <view class='protab-row' wx:for="{{datashow}}" wx:key="item">
+      <view class='row-instructions'>
+        {{item.description}}
+      </view>
+      <view class='row-state'>
+        {{item.state}}
+      </view>
+      <view class='row-operation'>
+        <view bindtap='goprodetail'>查看</view>
+        <view wx:if="{{item.state=='已处理'}}" class='operation-comments' bindtap='gocomments'>评价</view>
+      </view>
+    </view>
+  </view>
+</view>
